@@ -21,51 +21,96 @@ This project implements an autonomous driving system for Mario Kart using a Conv
 
 ## Installation
 
-1. Clone this repository:
+1. Clone the repository:
+
 ```bash
-git clone https://github.com/yourusername/Self-Driving-Mario-Kart-with-CNN-LSTM.git
+git clone https://github.com/JaskiratSudan/Self-Driving-Mario-Kart-with-CNN-LSTM.git
 cd Self-Driving-Mario-Kart-with-CNN-LSTM
 ```
 
-2. Install the required dependencies:
+2. Install required dependencies:
+
 ```bash
 pip install -r requirements.txt
 ```
 
+3. Install and run Mupen64Plus emulator:
+
+**macOS:**
+
+```bash
+brew install mupen64plus
+mupen64plus Mario\ Kart\ 64\ \(E\)\ \(V1.1\)\ \[\!\].z64
+```
+
+**Windows:**
+
+- Download from [Mupen64Plus Website](https://mupen64plus.org/).
+- Extract the zip file.
+- Run from command prompt:
+
+```bash
+mupen64plus Mario\ Kart\ 64\ \(E\)\ \(V1.1\)\ \[\!\].z64
+```
+**Linux:**
+
+```bash
+sudo apt install mupen64plus
+mupen64plus Mario\ Kart\ 64\ \(E\)\ \(V1.1\)\ \[\!\].z64
+```
+
+> **Important:** Position the emulator window at the top-left corner of your screen for correct screenshot capture.
+
 ## Usage
 
 ### Data Collection
-1. Run the data collection script:
+
+Run the data collection script:
+
 ```bash
 python record.py
 ```
-2. Use the GUI to:
-   - Set output directory
-   - Start/stop recording
-   - Control the game using:
-     - Shift: Accelerate
-     - Ctrl: Brake
-     - Left/Right arrows: Steering
+
+- Ensure the emulator window is at the top-left corner.
+- Focus the emulator window when prompted.
+
+- Use GUI to set output directory and start/stop recording.
+- Controls:
+  - `Shift`: Accelerate
+  - `Ctrl`: Brake
+  - `Left/Right arrows`: Steering
 
 ### Training
-1. Organize your collected data in the samples directory
-2. Run the training script:
+
+- Organize your collected data into the `samples/` directory.
+- Train your model:
+
 ```bash
-python train.py <samples_folder>
+python train.py samples/
 ```
-3. Optional: Continue training from an existing model:
+
+- Continue training an existing model (optional):
+
 ```bash
-python train.py <samples_folder> <existing_model.keras>
+python train.py samples/ existing_model.keras
 ```
 
 ### Autonomous Driving
-1. Start Mario Kart 64 in Mupen64Plus
-2. Run the autonomous driving script:
+
+- Start Mario Kart in the emulator:
+
+```bash
+mupen64plus Mario\ Kart\ 64\ \(E\)\ \(V1.1\)\ \[\!\].z64
+```
+
+- Run the autonomous driving script:
+
 ```bash
 python autodrive.py
 ```
-3. Focus the Mupen64Plus window when prompted
-4. The system will automatically control the game
+
+- Ensure the emulator window is at the top-left corner.
+- Focus the emulator window when prompted.
 
 ## Configuration
 

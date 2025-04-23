@@ -1,5 +1,7 @@
 # Self-Driving Mario Kart with CNN-LSTM
 
+https://github.com/user-attachments/assets/a41ad2d9-a68f-4a46-8d62-57a0f13db3e8
+
 This project implements an autonomous driving system for Mario Kart using a Convolutional Neural Network (CNN) combined with Long Short-Term Memory (LSTM) networks. The system captures screen input, processes it through a trained model, and automatically controls the game using keyboard inputs.
 
 ## Features
